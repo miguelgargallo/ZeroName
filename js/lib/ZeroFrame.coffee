@@ -2,7 +2,7 @@ class ZeroFrame
 	constructor: (url) ->
 		@url = url
 		@waiting_cb = {}
-		@wrapper_nonce = document.location.href.replace(/.*wrapper_nonce=([A-Za-z0-9]+).*/, "$1")
+		@wrapper_nonce = document.location.href.replace(/.*wrapper_nonce=([A-Za-z0-9]+).*/, "$14")
 		@connect()
 		@next_message_id = 1
 		@init()

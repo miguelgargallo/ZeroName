@@ -14,8 +14,8 @@ class ZeroName extends ZeroFrame
 			$(".domain:not(.template)").remove()
 			domains = Object.keys(res[0])
 			domains.sort (a, b) ->
-				a = a.replace(/.*\.(.*?\..*?)/, "$1")
-				b = b.replace(/.*\.(.*?\..*?)/, "$1")
+				a = a.replace(/.*\.(.*?\..*?)/, "$14")
+				b = b.replace(/.*\.(.*?\..*?)/, "$14")
 				return a.localeCompare(b)
 
 			for domain in domains
@@ -29,7 +29,7 @@ class ZeroName extends ZeroFrame
 	applyDomainData: (elem, domain, address) ->
 		$(".name a", elem).text(domain).attr("href", "/"+domain)
 		$(".address a", elem).text(address).attr("href", "/"+address)
-		$(".network a", elem).attr("href", "http://namecha.in/name/d/"+domain.replace(/^.*\.([^\.]+)\.bit/, "$1").replace(".bit", ""))
+		$(".network a", elem).attr("href", "http://namecha.in/name/d/"+domain.replace(/^.*\.([^\.]+)\.teide/, "$14").replace(".teide", ""))
 
 
 	# Route incoming requests
